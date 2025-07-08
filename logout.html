@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script language="JavaScript">
+
+    function openLogin() {
+        if (window.name != 'hotspot_logout') return true;
+        open('$(link-login)', '_blank', '');
+        window.close();
+        return false;
+    }
+
+</script>
+
+<body>
+
+    <div class="container">
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="section">
+            <div class="square" style="--i:0;"> </div>
+            <div class="square" style="--i:1;"> </div>
+            <div class="square" style="--i:2;"> </div>
+            <div class="square" style="--i:3;"> </div>
+            <div class="square" style="--i:4;"> </div>
+            <div class="card">
+                <div class="login-form">
+                    <div class="logo">
+                        <img src="image/apple.svg" alt="">
+                    </div>
+                    <h1>yhotie.com</h1>
+                    <p class="description">Selamat datang di yhotie.com </p>
+                    <ul class="list-group">
+                        <li class="list-group-items">
+                        $(if login-by == 'trial')
+                        <p>Selamat datang trial user</p>
+                        $(elif login-by != 'mac')
+                        <p> Selamat tinggal, $(username)</p>
+                        $(endif)
+                        </li>
+                        <div class="divider"></div>
+                        <li class="list-group-items">
+                            <p>Ip Addresss</p>
+                            <p>$(ip)</p>
+                        </li>
+                        <li class="list-group-items">
+                            <p>Mac Address</p>
+                            <p>$(mac)</p>
+                        </li>
+                        <li class="list-group-items">
+                            <p>Upload</p>
+                            <p>$(bytes-in-nice)</p>
+                        </li>
+                        <li class="list-group-items">
+                            <p>Download</p>
+                            <p>$(bytes-out-nice)</p>
+                        </li>
+                        <li class="list-group-items">
+                            <p>Terkoneksi</p>
+                            <p>$(uptime)</p>
+                        </li>
+                        $(if remain-bytes-total)
+                        <li class="list-group-items">
+                            <p>Sisa Quota</p>
+                            <p>$(remain-bytes-total-nice)</p>
+                        </li>
+                        $(endif)
+                        $(if session-time-left)
+                        <li class="list-group-items">
+                            <p>Sisa Waktu</p>
+                            <p>$(session-time-left)</p>
+                        </li>
+                        $(endif)
+                    </ul>
+                    <!-- logout form and button -->
+                    <form action="$(link-logout)" name="login" onSubmit="return openLogin()">
+                        <button class="btn-custom" type="submit">Login Kembali</button>
+                    </form>
+
+                    <!-- <button class="btn-custom" type="submit">Login Kembali</button> -->
+                </div>
+                <div class="login-content">
+                    <h1>yhotie.com</h1>
+                    <p class="description">Selamat datang di yhotie.com </p>
+                    <h2>Paket</h2>
+                    <div class="package">
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h2>Contact Person</h2>
+                    <div class="contact-person">
+                        <p>WA : 082341469710 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    document.getElementById('title').innerHTML = window.location.hostname + " > logout";
+</script>
+
+</html>

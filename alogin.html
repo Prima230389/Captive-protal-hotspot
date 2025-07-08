@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yhotie.com</title>
+    <link rel="stylesheet" href="style.css">
+    $(if refresh-timeout)
+    <script>
+        setTimeout(function () {
+            location.href = './status';
+        }, 4000)
+    </script>
+    $(endif)
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="section">
+            <div class="square" style="--i:0;"> </div>
+            <div class="square" style="--i:1;"> </div>
+            <div class="square" style="--i:2;"> </div>
+            <div class="square" style="--i:3;"> </div>
+            <div class="square" style="--i:4;"> </div>
+            <div class="card">
+                <div class="login-form">
+                    <div class="logo">
+                        <img src="image/apple.svg" alt="">
+                    </div>
+                    <h1>yhotie.com</h1>
+                    <p class="description">Selamat datang di yhotie.com </p>
+                    <ul class="list-group">
+                        <li class="list-group-items">
+                            $(if login-by == 'trial')
+                            <p>Selamat Datang, Pengguna Trial</p>
+                            $(elif login-by != 'mac')
+                            <p>Selamat Datang, $(username)</p>
+                            $(endif)
+                        </li>
+                        <div class="divider"></div>
+                        <li class="list-group-items">
+                            <p>Anda telah terhubung di jaringan vue.net.</p>
+                        </li>
+                    </ul>
+                    <button class="btn-custom" type="submit" id="login" onclick="status();">Login Kembali</button>
+                </div>
+                <div class="login-content">
+                    <h1>yhotie.com</h1>
+                    <p class="description">Selamat datang di yhotie.com </p>
+                    <h2>Paket</h2>
+                    <div class="package">
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h2>Contact Person</h2>
+                    <div class="contact-person">
+                        <p>WA : 082341469710 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function status() {
+        console.log(" go to status");
+        window.location.href = "./status.html";
+    }
+</script>
+
+<script type="text/javascript">
+	document.getElementById('title').innerHTML = window.location.hostname + " > success";	
+    document.getElementById('dname').innerHTML = window.location.hostname;	
+</script>
+</html>

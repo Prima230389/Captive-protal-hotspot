@@ -1,0 +1,628 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,800&display=swap'); */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets//font/Poppins/Poppins-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets//font/Poppins/Poppins-SemiBold.ttf');
+    font-weight: 600;
+    font-style: Semi-bold;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('./assets//font/Poppins/Poppins-Bold.ttf');
+    font-weight: 800;
+    font-style: bold;
+}
+
+.container{
+    height: 100vh;
+}
+.container .colorbackground{
+    position: absolute;
+    z-index: -1;
+}
+
+.container .colorbackground:nth-child(1){
+    width: 100%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    background-color: rgb(140, 255, 74);
+    filter: blur(200px);
+}
+.container .colorbackground:nth-child(2){
+    width: 50%;
+    height: 500px;
+    top: 100px;
+    right: 0;
+    background-color: rgb(255, 20, 157);
+    filter: blur(200px);
+}
+.container .colorbackground:nth-child(3){
+    width: 100%;
+    height: 300px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(17, 148, 255);
+    filter: blur(200px);
+}
+
+.container .colorbackground:nth-child(4){
+    width: 40%;
+    height: 200px;
+    left: 0;
+    top: 40%;
+    background-color: rgb(12, 89, 153);
+    filter: blur(200px);
+}
+
+.container .section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container .card{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(246, 246, 246, 0.3);
+    box-shadow: 1px 25px 30px rgba(102, 102, 102, 0.3);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-right: solid 1px rgba(238, 229, 229, 0.2);
+    border-bottom: solid 1px rgba(238, 229, 229, 0.2);
+}
+
+.container .section .card .login-form{
+    display: flex;
+    flex-direction: column;
+    position: relative;;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    order: 2;
+}
+
+.container .section .card .login-content{
+    display: flex;
+    /* position:fixed; */
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    flex-direction: column;
+}
+
+.container .section .card .login-form form{
+    display: flex;
+    flex-direction: column;
+    position: relative;;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    
+}
+
+.container .section .card .login-content h1{
+    color: white;
+    font-weight: 800;
+    /* margin-bottom: 20px; */
+    position: relative;
+    align-self: flex-start;
+    /* padding-left: 10%; */
+    margin-left: 6% ;   
+
+}
+
+.container .section .card .login-content p.description{
+    color: white;
+    font-weight: 400;
+    margin-bottom: 20px;
+    position: relative;
+    align-self: flex-start;
+    /* padding-left: 10%; */
+    margin-left: 6%;
+}
+.container .section .card .login-form h1{
+    color: white;
+    font-weight: 800;
+    /* margin-bottom: 20px; */
+    position: relative;
+    align-self: flex-start;
+    /* padding-left: 10%; */
+    margin-left: 6% ;
+    /* visibility: hidden; */
+    display: none;
+}
+
+.container .section .card .login-form p.description{
+    color: white;
+    font-weight: 400;
+    margin-bottom: 20px;
+    position: relative;
+    align-self: flex-start;
+    /* padding-left: 10%; */
+    margin-left: 6%;
+    /* visibility: hidden; */
+    display: none;
+}
+
+.container .section .card .login-form h2{
+    color: white;
+    font-weight: 800;
+    margin-bottom: 30px;
+    position: relative;
+    align-self: flex-start;
+    margin-left: 6%;
+}
+
+.container .section .card .login-form h2::before{
+    content: '';
+    width: 50px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    padding-left: 10%;
+}
+
+.login-form form input {
+    padding: 3px 3px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding-left: 20px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(246, 246, 246, 0.3);
+    box-shadow: 0px 10px 10px rgba(146, 146, 146, 0.1);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-right: solid 1px rgba(238, 229, 229, 0.2);
+    border-bottom: solid 1px rgba(238, 229, 229, 0.2);}
+
+.login-form form button{
+    background-color: #fff;
+    color: #696969;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.card .login-content h2{
+    color: #fff;
+    position: relative;
+    align-self:flex-start;
+    margin-bottom: 20px;
+    margin-left: 6%;
+}
+.card .login-content h2::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100px;
+    height: 5px;
+    background-color: white;
+}
+
+.card .login-content .package{
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+    margin-left: 6%;
+    margin-bottom: 20px;
+    width: 80%;
+    height: 150px;
+    /* background-color: rgba(255, 255, 255, .2); */
+    border-radius: 10px;
+    overflow: scroll;
+    /* scrollbar-color: rgb(155, 152, 152) rgba(255, 255, 255, 0.2); */
+    scrollbar-width:none;
+    /* scrollbar-width:thin; */
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+.card .login-content .package .list{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* width: 400px; */
+    background-color: rgba(255, 255, 255, .5);
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    /* border-bottom: solid 1px; */
+}
+
+.package .list p{
+    color: #696969;
+    width: 100px;
+}
+
+.package .list p:nth-child(2){
+    color: #696969;
+    font-size: 14px;
+}
+
+.package .list .number-package{
+    position: relative;
+    width: 70%;
+    background-color: #8b8b8b;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 3px;
+}
+
+.package .list .number-package span{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+}
+
+.card .login-content .contact-person{
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+    margin-left: 6%;
+    margin-bottom: 20px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    padding-right: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(246, 246, 246, 0.3);
+    box-shadow: 0px 10px 10px rgba(146, 146, 146, 0.1);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-right: solid 1px rgba(238, 229, 229, 0.2);
+    border-bottom: solid 1px rgba(238, 229, 229, 0.2);
+}
+
+.card .login-content .contact-person{
+    color: white;
+}
+
+ /* square */
+
+ .container .section .square{
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 10px 10px rgba(146, 146, 146, 0.1);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-right: solid 1px rgba(238, 229, 229, 0.2);
+    border-bottom: solid 1px rgba(238, 229, 229, 0.2);
+    background-color: rgba(246, 246, 246, 0.3);
+    border-radius: 10px;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animate{
+    0%,100%{
+        transform: translateY(-40px);
+    }
+    50%{
+        transform: translateY(40px);
+    }
+}
+
+.container .section .square:nth-child(1){
+   top: 40px;
+   right: 80px;
+   width: 100px;
+   height: 100px;
+}
+.container .section .square:nth-child(2){
+    z-index: 2;
+   top: 190px;
+   left: 80px;
+   width: 120px;
+   height: 120px;
+}
+
+.container .section .square:nth-child(3){
+    z-index: 1;
+   top: 390px;
+   right: 80px;
+   width: 120px;
+   height: 120px;
+}
+
+.container .section .square:nth-child(4){
+    top: 20px;
+    left: 580px;
+    width: 50px;
+    height: 50px;
+ }
+
+ /* logo */
+ .logo{
+     position: relative;
+    width: 80px ;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: rgba(246, 246, 246, 0.3);
+    box-shadow: 1px 5px 5px rgba(194, 194, 194, 0.3);
+    border: solid 1px rgba(226, 224, 224, 0.616);
+    border-right: solid 1px rgba(238, 229, 229, 0.301);
+    border-bottom: solid 1px rgba(238, 229, 229, 0.267);
+    margin-bottom: 1.5rem;
+    animation: logoanimate 5s linear infinite;
+
+ }
+
+ .container .section .card .login-form .list-group{
+    display: flex;
+    flex-direction: column;
+    position: relative;;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+    background-color: rgba(246, 246, 246, 0.3);
+    box-shadow: 0px 10px 10px rgba(146, 146, 146, 0.1);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-right: solid 1px rgba(238, 229, 229, 0.2);
+    border-bottom: solid 1px rgba(238, 229, 229, 0.2);
+}
+
+.login-form .list-group .list-group-items{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.list-group-items p {
+    color: white;
+    padding-bottom: 0.2rem;
+    font-size: 14px;
+}
+
+.btn-custom{
+    background-color: #fff;
+    color: #696969;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    width: 90%;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.bg-dark{
+    background-color:  rgba(30, 53, 184, 0.3) !important;
+}
+
+.text-dark{
+    color: rgba(30, 53, 184, 0.3) !important;
+}
+ @keyframes logoanimate{
+    0%,100%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+}
+
+ .logo img{
+     width: 50px;
+     height: 50px;
+ }
+
+ /* end logo */
+
+ /* divider */
+ .divider{
+     margin: 1rem 0px;
+     width: 100%;
+     border: solid 1px white;
+ }
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+    .container .section{
+        margin: 20px 0;
+        padding: 20px 0;
+        height: auto;
+        /* overflow: hidden; */
+    }
+
+    .container .section .card{
+        flex-direction: column;
+        height: auto;
+        overflow:hidden;
+    }
+    
+    .logo{
+        margin-top: 1.5rem;
+    }
+
+    .container .section .card .login-form,
+    .container .section .card .login-content
+    {
+        width: 100%;   
+    }
+    
+    .container .section .card .login-content h1, 
+    .container .section .card .login-content h2, 
+    .container .section .card .login-content .contact-person, 
+    .container .section .card .login-content .package, 
+    .container .section .card .login-content p.description
+    {
+        /* padding-left: 0%; */
+        /* padding-inline-start: 5%; */
+        margin-left: 6%;
+
+        /* margin-inline-start: 0%; */
+    }
+
+    .container .section .card .login-form{
+        margin-bottom: 20px;
+    }
+
+    .container .section .card .login-form h2{
+        margin-left: 6%;
+    }
+ }
+.trial{
+    display: flex;
+    flex-direction: column;
+    position: relative;;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-top: 0.8rem;
+}
+.login-form .trial p {
+    color: white;
+}
+.login-form .trial a{
+    width: 100%;
+}
+
+ .login-form .trial a button{
+    background-color: #fff;
+    color: #696969;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.login-form .error {
+    width: 90%;
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+    padding: 5px;
+    padding-right: 20px;
+    border-radius: 10px;
+    overflow: auto;
+    background-color: rgba(246, 246, 246, 0.7);
+    box-shadow: 0px 10px 10px rgba(146, 146, 146, 0.1);
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    border-right: solid 1px rgba(238, 229, 229, 0.2);
+    border-bottom: solid 1px rgba(238, 229, 229, 0.2);
+    /* background-color: #cdcdcd; */
+    margin-top: .8rem;
+    margin-left: 10px;
+}
+
+.login-form .error p{
+    color: rgb(236, 58, 58);
+    font-size: 14px;
+}
+
+
+ @media (max-width: 575.98px) {
+    
+    .container .section .card .login-form h1,
+    .container .section .card .login-form p.description
+    {
+            display: inline;
+    } 
+
+
+    .container .section .card .login-content h1,
+    .container .section .card .login-content p.description
+    {
+        display: none;
+    }
+
+    .container .section .card .login-form{
+        margin-bottom: 20px;
+        order: 1;
+    }
+
+    .container .section .card .login-content{
+        margin-bottom: 20px;
+        order: 2;
+    }
+
+    .container .section .square:nth-child(2){
+        z-index: -1;
+       top: 190px;
+       left: 20px;
+       width: 120px;
+       height: 120px;
+    }
+
+    .container .section .square:nth-child(3){
+       z-index: 1;
+       top: 600px;
+       right: 20px;
+       width: 70px;
+       height: 70px;
+    }
+ 
+    .container .section .square:nth-child(4){
+        z-index:1;
+        top: 420px;
+        left: 5px;
+        width: 50px;
+        height: 50px;
+     }
+
+     .container .colorbackground:nth-child(3) {
+        bottom: -32%;
+    }
+  }
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .container .section .card .login-form h1 {
+        display: inline;
+    }
+ }
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {  }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {  }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }

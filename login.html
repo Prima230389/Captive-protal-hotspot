@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yhotie.com | Template Login Mikrotik Glassmorphism</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    var error = "$(error)";
+    if ((error == "user $(username) has reached uptime limit") || (error == "kode voucher/user $(username) sudah mencapai batas waktu")) {
+        window.location.href = "./expired.html";
+    }
+</script>
+
+<body>
+
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    $(endif)
+
+    <div class="container">
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="colorbackground"></div>
+        <div class="section">
+            <div class="square" style="--i:0;"> </div>
+            <div class="square" style="--i:1;"> </div>
+            <div class="square" style="--i:2;"> </div>
+            <div class="square" style="--i:3;"> </div>
+            <div class="square" style="--i:4;"> </div>
+            <div class="card">
+                <div class="login-form">
+                    <div class="logo">
+                        <img src="image/apple.svg" alt="">
+                    </div>
+
+                    <!-- header -->
+                    <h1>yhotie.com</h1>
+                    <p class="description">Selamat datang di yhotie.com </p>
+                    <h2>Login</h2>
+
+                    <!-- form login -->
+                    <form method="post" name="login" autocomplete="off" action="$(link-login-only)" $(if chap-id)
+                        onSubmit="return doLogin()" $(endif)>
+                        <input type="hidden" name="dst" value="$(link-orig)" />
+                        <input type="hidden" name="popup" value="true" />
+
+                        <input type="text" name="username" id="" placeholder="username" value="$(username)">
+                        <input type="password" name="password" id="" placeholder="password">
+
+                        <button type="submit">Login</button>
+
+                    </form>
+
+                    $(if trial == 'yes')
+                    <div class="trial">
+                        <p>atau</p>
+                        <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
+                            <button type="submit">Login Trial</button>
+                        </a>
+                    </div>
+                    $(endif)
+
+                    $(if error)
+                    <div class="error">
+                        <p>$(error)</p>
+                    </div>
+                    $(endif)
+
+                </div>
+                <div class="login-content">
+                    <h1>yhotie.com</h1>
+                    <p class="description">Selamat datang di yhotie.com </p>
+                    <h2>Paket</h2>
+                    <div class="package">
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <p class="title">Rp. 2000</p>
+                            <p class="subtitle">4 jam</p>
+                            <div class="number-package">
+                                <span>Paket 1</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <h2>Contact Person</h2>
+                    <div class="contact-person">
+                        <p>WA : 082341469710 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script type="text/javascript">
+        var hostname = window.location.hostname;
+        document.getElementById('title').innerHTML = hostname + " > login";
+
+        document.login.username.focus();
+
+        var infologin = document.getElementById('infologin');
+        infologin.innerHTML = "Masukkan Kode Voucher kemudian klik login.";
+
+        // login page 2 mode by Laksamadi Guko
+        var username = document.login.username;
+        var password = document.login.password;
+
+        username.placeholder = "Kode Voucher";
+
+        // set password = username
+        function setpass() {
+            var user = username.value
+            //user = user.toLowerCase();
+            username.value = user;
+            password.value = user;
+        }
+
+        username.onkeyup = setpass;
+
+        // change to voucher mode
+        function voucher() {
+            username.focus();
+            username.onkeyup = setpass;
+            username.placeholder = "Kode Voucher";
+            username.style = "border-radius:3px;"
+            password.type = "hidden";
+            infologin.innerHTML = "Masukkan Kode Voucher kemudian klik login.";
+        }
+
+        // change to member mode
+        function member() {
+            username.focus();
+            username.onkeyup = "";
+            username.placeholder = "Username";
+            username.style = "border-radius:3px 3px 0px 0px;"
+            password.type = "password";
+            infologin.innerHTML = "Masukkan Username dan Password kemudian klik login.";
+        }
+    </script>
+</body>
+
+</html>
